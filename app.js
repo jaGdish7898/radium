@@ -27,18 +27,7 @@ console.log("<================ using chunk =====================>");
 let k=["jan","feb","march","april","may","jun","july","aug","sept","oct","nov","dec"];
 var chunk = require('chunk');
 console.log(chunk(["jan","feb","march","april","may","jun","july","aug","sept","oct","nov","dec"],3));
-// console.log("<================ using tail =====================>");
-// // var tail=require("tail");
-// tail = require('tail');
-// let numbers=[1,2,3,4,5,6,7,8,9,10];
-// // console.log(tail([1,2,3,4,5,6,7,8,9,10],1));
-// console.log(tail([1, 2, 3]));
-// import arrayUnion from 'array-union';
-// console.log(arrayUnion([1, 1, 2, 3], [2, 3]))
-console.log("<================ using chunk =====================>");
+
+console.log("<================ using arrunion =====================>");
 var union = require('arr-union');
 console.log(union([1,2,3,4], [7,4], [25,3,7]));
-console.log("<================ frompairs =====================>");
-// let p=require("lodash")
-// const pairs=require("frompairs");
-// console.log(lodash.fromPairs(["key1","value"]));
