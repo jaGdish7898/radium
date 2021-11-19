@@ -10,7 +10,7 @@ router.get('/test-me', function (req, res) {
     res.send('My first ever api!')
 });
 
- //api's about book
+ //api's about books
 router.post('/createAuthor', authorController.createAuthor  );
 
 router.get('/getAllBooks',  bookCantroller.getAllBook  );
@@ -20,6 +20,16 @@ router.post("/addThisBook",bookCantroller.addThisBook);
 
 //api's about publisher
 router.post("/addPublisher",publisherController.addPublisher)
+
+
+
+
+
+
+
+
+
+
 
 router.post("/getById",authorController.getById)
 
