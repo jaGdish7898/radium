@@ -2,29 +2,16 @@ const mongoose=require('mongoose')
 let ObjectId=mongoose.Schema.Types.ObjectId
 
 const userSchema=new mongoose.Schema({
-    firstName: String,
-    lastName: String,
-    mobile: {
-        type: Number,
-        unique: true,
-        required: true
+    name:String,
+    balance:{
+        type:Number,
+        default:100
     },
-    emailId: String, 
-    gender: {type: String, enum: ['male', 'female', 'LGBTQ']}, 
+    address:String,
     age: Number,
-    isIndian: Boolean, 
-    bookHave:Number,
-    favAuthor:{
-        type:ObjectId,
-        ref:"MyAuthor"
-    },
-    publisherInfo:{
-        type:ObjectId,
-        ref:"publisher"
-    }
+    gender: {type: String, enum: ['male', 'female', 'LGBTQ']},
     
-    // parentsInfo : { motherName: String, fatherName: String , siblingName: String },
-    // cars: [ String ]
+    
 
 }, {timestamps: true} )
 
