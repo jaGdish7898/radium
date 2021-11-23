@@ -12,7 +12,6 @@ const addNewOrder= async function (req, res) {
         if(isFreeOrNot==="true"){//imp point
             k.amount=0;
             k.isFreeAppUser=true
-            // console.log(k)
             let ans=await orderModel.create(k)
             res.dend({newOrderEnetry:ans})
             
