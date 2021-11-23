@@ -17,7 +17,7 @@ const addNewOrder= async function (req, res) {
             res.dend({newOrderEnetry:ans})
             
         }else{
-            if(userDetail.balance>productDetail.price){
+            if(userDetail.balance>=productDetail.price){
                 k.amount=productDetail.price
                 k.isFreeAppUser=false
                 let remainingBalance=userDetail.balance-productDetail.price
