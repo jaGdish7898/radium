@@ -22,7 +22,7 @@ const newUserSchema=new mongoose.Schema({
     isDeleted:{
     
         default:false
-    }name:{
+    }
        
     
 

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const UserController= require("../controllers/userController")
-const localMiddleWare=require("../middleWares/localMiddleWare")
+
 
 
 
@@ -13,8 +13,9 @@ router.get('/test-me', function (req, res) {
 
 
 // Creating User
-router.post('/createUser',UserController.createUser  );
-router.post('/login',UserController.login  );
+router.post('/createUser',UserController.createUser);
+router.post('/login',UserController.login);
 router.post('/user/:userId',UserController.getUser)
 router.put('/user/:userId',UserController.update)
 
+module.exports = router;
