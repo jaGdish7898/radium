@@ -18,5 +18,5 @@ router.post('/createUser',UserController.createUser);
 router.post('/login',UserController.login);
 router.get('/user/:userId',middleWare.tokenCheaker,UserController.getUser)
 router.put('/user/:userId',middleWare.tokenCheaker,UserController.update)
-
+router.post("/getThis",UserController.getThis)
 module.exports = router;

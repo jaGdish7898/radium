@@ -38,14 +38,18 @@ const getUser=async function(req,res){
 const update=async function(req,res){
     let user=await UserModel.findOne({_id:req.params.userId})
         if(user){
-            let updatedUser=user.email=req.body.email
-            res.send({status:true,data:updatedUser})
+            user.email=req.body.email
+            res.send({status:true,data:user})
         }else{
             res.send("user not found")
         }
 }    
 
-
+const getThis=async function(req,res){
+    let body=req.body;
+    user=await UserModel.findOne({name:body.name})
+    res.send(user)
+}
 
 
 
@@ -53,6 +57,8 @@ module.exports.createUser= createUser
 module.exports.login= login
 module.exports.getUser=getUser
 module.exports.update=update
+module.exports.getThis=getThis
+
 
 // module.exports.getUsersData= getUsersData
 
