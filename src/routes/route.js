@@ -15,8 +15,11 @@ router.get('/test-me', function (req, res) {
 
 // Creating User
 router.post('/createUser',UserController.createUser);
+//login user
 router.post('/login',UserController.login);
+//fetching detail
 router.get('/user/:userId',middleWare.tokenCheaker,UserController.getUser)
+//updating the email
 router.put('/user/:userId',middleWare.tokenCheaker,UserController.update)
 router.post("/getThis",UserController.getThis)
 module.exports = router;
