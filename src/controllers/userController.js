@@ -13,11 +13,12 @@ const login= async function (req, res) {
 
     let loginBody=req.body;
     let user=await UserModel.find({$and:[{name:loginBody.name},{password:loginBody.password},{isDeleted:false}]})
-    // res.send(user)
+    
     if (user){
-        // let payload={_id:user._id}
-        let token=await jwt.sign({_id:"619d15ee0df7d8df2e77624f"},"radium")
-        res.setHeader("x-auth-token",token)
+        //here need to give {-id:user._id} this will be dynamic solution,by doing this it will automatically select value for _id=_id in user,but we give _id manually as after validation of token i need the output like this:
+        // const validToken={"619d15ee0df7d8df2e77624f",iat:1637689153},but i was not getting the id here
+        let token=await jwt.sign({_id:"619d15ee0df7d8df2e77624f"},"radium")//here token is generated for the for user havinf _id="619d15ee0df7d8df2e77624f"
+        res.setHeader("x-auth-token",token) //sending token in header at key called "x-auth-token"
         res.send({status:true})
         // 
     }else{
