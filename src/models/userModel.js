@@ -20,7 +20,7 @@ const newUserSchema=new mongoose.Schema({
         required:true
     },
     isDeleted:{
-    
+        type:Boolean,
         default:false
     }
        
@@ -28,4 +28,4 @@ const newUserSchema=new mongoose.Schema({
 
 }, {timestamps: true} )
 
-module.exports=mongoose.model('User',newUserSchema)
+module.exports=mongoose.model('Newuser',newUserSchema)

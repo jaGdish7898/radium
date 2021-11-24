@@ -1,42 +1,6 @@
-# radium
-Repository for backend cohort - Radium
 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc2ODkxNTN9.L8SNLaKfAJHLRP_peT1QROMz_KR5BvGpy6aUEWZMu3g
 
-# step 1
-install mongoose : npm i mongoose (from parent folder)
-
-
-# step 2
-use MOdel to interact with DB
-
-
-#step 3
-break your code into correct folder structure 
-const addNewOrder= async function (req, res) {
-    let isFreeOrNot=req.headers.isfreeapp;
-    // res.send({free:isFreeOrNot})
-    //k=datail coming in body
-    let k=req.body
-    let productDetail=await productModel.findById(k.productId)
-     let userDetail=await userModel.findById(k.userId)
-    if(isFreeOrNot==="true"){//imp point
-        k.amount=productDetail.price
-        k.isFreeAppUser=true
-        console.log(k)
-        res.send(k)
-        
-    }else{
-        if(userDetail.balance>productDetail.price){
-            k.amount=productDetail.price
-            k.isFreeAppUser=false
-            let remainingBalance=userDetail.balance-productDetail.price
-            // let remainingBalance=
-            await userModel.findOneAndUpdate({_id:k.userId},{balance:remainingBalance})
-            res.send(k)
-        }
-        else{
-            res.send("you have insufficient balance")
-        }
-}
-}
-module.exports.addNewOrder=addNewOrder;
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc3MTU3NTV9.lqibgi9gm4J3CTZYrB68t6IZ4fpOEZEdbgFZfpM-hAE
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTlkMTVlZTBkZjdkOGRmMmU3NzYyNGYiLCJpYXQiOjE2Mzc3MTY1MTB9.k-swrRI0K2PyhzjqOzgeWwmc64ImTQiNYH0Urz0bF1Q
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTlkMTVlZTBkZjdkOGRmMmU3NzYyNGYiLCJpYXQiOjE2Mzc3MTc2Nzh9.DHjqpiUfzWwW1AjP320u2tzaXmAzCyWMDmSZRZvnNQ8
