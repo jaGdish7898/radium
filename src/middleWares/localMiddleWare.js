@@ -2,13 +2,15 @@ const jwt=require("jsonwebtoken")
 let tokenCheaker=async function(req,res,next){
     let token=req.headers["x-auth-token"]
     if(token){
-        // res.send({token:token})
+        
         const validToken=await jwt.verify(token,"radium")
-        // res.send(validToken)
+        
         if(validToken){
-            
-            req.validToken=validToken
-            next();
+            if(validToken._id==req.params.userId){
+                next();
+            }else{
+                res.send("provided token and user id not matched")
+            }
         }else{
             res.send("invalid Token")
         }

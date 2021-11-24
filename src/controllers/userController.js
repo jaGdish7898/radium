@@ -10,18 +10,12 @@ const createUser= async function (req, res) {
 }
 
 const login= async function (req, res) {
-
     let loginBody=req.body;
     let user=await UserModel.find({$and:[{name:loginBody.name},{password:loginBody.password},{isDeleted:false}]})
-    
     if (user){
-        //user!={_id:12345},but user=[{_id:12345}] as we are using "find" find gives array if there is single object also.so to take id==>user[0]._id
-        //if i used "findone" then user={_id:12345},then to get id==>user._id
-        
-        let token=await jwt.sign({_id:user[0]._id},"radium")//here token is generated for the for user havinf _id="619d15ee0df7d8df2e77624f"
-        res.setHeader("x-auth-token",token) //sending token in header at key called ""
+        let token=await jwt.sign({_id:user[0]._id},"radium")
+        res.setHeader('x-auth-token',token)
         res.send({status:true})
-        // 
     }else{
         res.send({
             status:false,
@@ -30,39 +24,26 @@ const login= async function (req, res) {
     }
         
 }
+
+
 const getUser=async function(req,res){
-    
-    if (req.validToken._id==req.params.userId){
-        
-        let user=await UserModel.findOne({_id:req.params.userId})
-        
+    let user=await UserModel.findOne({_id:req.params.userId})
         if(user){
             res.send({status:true,data:user})
         }else{
             res.send("user not found")
         }
-        
-    }else{
-        res.send("not authorised")
-    }
 }
 
 const update=async function(req,res){
-    // res.send("ok")
-    if (req.validToken._id==req.params.userId){
-        
-        let user=await UserModel.findOne({_id:req.params.userId})
-        
+    let user=await UserModel.findOne({_id:req.params.userId})
         if(user){
-            let updatedUser=await UserModel.findOneAndUpdate({_id:req.params.userId},{email:req.body.email})
+            let updatedUser=user.email=req.body.email
             res.send({status:true,data:updatedUser})
         }else{
             res.send("user not found")
         }
-    }else{
-        res.send("not authorised")
-    }
-}
+}    
 
 
 

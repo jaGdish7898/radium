@@ -1,6 +1,2 @@
-
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc2ODkxNTN9.L8SNLaKfAJHLRP_peT1QROMz_KR5BvGpy6aUEWZMu3g
-
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc3MTU3NTV9.lqibgi9gm4J3CTZYrB68t6IZ4fpOEZEdbgFZfpM-hAE
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTlkMTVlZTBkZjdkOGRmMmU3NzYyNGYiLCJpYXQiOjE2Mzc3MTY1MTB9.k-swrRI0K2PyhzjqOzgeWwmc64ImTQiNYH0Urz0bF1Q
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTlkMTVlZTBkZjdkOGRmMmU3NzYyNGYiLCJpYXQiOjE2Mzc3MTc2Nzh9.DHjqpiUfzWwW1AjP320u2tzaXmAzCyWMDmSZRZvnNQ8
+//user!={_id:12345},but user=[{_id:12345}] as we are using "find" find gives array if there is single object also.so to take id==>user[0]._id
+        //if i used "findone" then user={_id:12345},then to get id==>user._id
