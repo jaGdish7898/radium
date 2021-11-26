@@ -14,7 +14,7 @@ const getStatesList = async function (req, res) {
 
     console.log(cowinStates);
     let states = cowinStates.data;
-    res.status(200).send({ msg: "Successfully fetched data", data:states}); 
+    res.status(200).send({ msg: "Successfully fetched data here", data:states}); 
 
   }
   catch (err) {
@@ -129,7 +129,7 @@ const londonTemp=async function(req,res){
   let response = await axios(options)
   console.log(response);
   console.log("ok");
-  res.send({"temp OF lONDON":response.data.main.temp})
+  res.send({"temp OF lONDON":response.data.main.temp}) 
 
 }
 
@@ -172,7 +172,7 @@ const getBitcoins=async function(req,res){
   let sortedData=Data.sort((x,y)=>{return x.changePercent24Hr-y.changePercent24Hr})
   await coinModel.create(sortedData)
 
-  
+     
 }
 catch (err) {
   console.log(err.message,)
@@ -200,3 +200,5 @@ module.exports.getDistrictsList = getDistrictsList;
 module.exports.getByPin = getByPin;
 module.exports.getOtp = getOtp;
 module.exports.getWheather = getWheather
+
+//f1a93c7f2832ca822dc0920253b1614a

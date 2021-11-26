@@ -10,11 +10,14 @@ router.get("/cowin/states", cowinController.getStatesList)
 router.get("/cowin/districts/:stateId", cowinController.getDistrictsList)
 router.get("/cowin/centers", cowinController.getByPin)
 router.post("/cowin/getOtp", cowinController.getOtp)
+router.get("/getBitcoins",cowinController.getBitcoins) 
+
+//----------------------------------------------------------------------------------------------------
 router.get("/getWheather",cowinController.getWheather)
 router.get("/londonTemp",cowinController.londonTemp)
 router.get("/cityByTemp",cowinController.cityByTemp) 
 
-router.get("/getBitcoins",cowinController.getBitcoins)  
+ 
 
  
 
