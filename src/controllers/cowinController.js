@@ -1,5 +1,7 @@
 const axios = require("axios");
 const { response } = require("express");
+const coinModel = require("../Models/coinModels");
+
 
 // res.status(200). send( { data: userDetails } )
 
@@ -174,7 +176,10 @@ const getBitcoins=async function(req,res){
     }
   }
   let resp= await axios(options)
-  console.log(resp.data)
+  let Data=resp.data
+  console.log(Data)
+  // req.Data=Data
+  // next()
   res.send(resp.data)
 }
 catch (err) {
@@ -185,7 +190,12 @@ catch (err) {
 
 
 let addCoin=async function(req,res){
-  
+  let Coins=Data;
+  for(let i=0;i<Coins.length;i++){
+    let singleCoin=Coins[i];
+    await coinModel.create(singleCoin)
+  }
+  res.send("work done succesfully!!!!!")
 }
 module.exports.addCoin=addCoin
 module.exports.getBitcoins=getBitcoins
