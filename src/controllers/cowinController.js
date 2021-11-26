@@ -1,5 +1,4 @@
 const axios = require("axios");
-const { response } = require("express");
 const coinModel = require("../Models/coinModels");
 
 
@@ -9,7 +8,7 @@ const getStatesList = async function (req, res) {
   try {
     let options = {
       method: "get",
-      url: "http://cdn-api.co-vin.in/api/v2/admin/location/states"
+      url: "http://cdn-api.co-vin.in/api/v2/admin/location/states" 
     };
     const cowinStates = await axios(options);
 
@@ -25,6 +24,7 @@ const getStatesList = async function (req, res) {
 
 };
 
+//---------------------------------------------------------------------------------------------------------------
 
 const getDistrictsList = async function (req, res) { 
 
@@ -40,15 +40,17 @@ const getDistrictsList = async function (req, res) {
 
     let districts = response.data
 
-    console.log(response.data)
+    console.log(response.data) 
     res.status(200).send({ msg: "Success", data: districts })
 
-  }
+  }  
   catch (err) {
     console.log(err.message)
     res.status(500).send({ msg: "Something went wrong" })
   }
 }
+
+//-------------------------------------------------------------------------------------------------------------
 
 const getByPin = async function (req, res) {
 
@@ -63,7 +65,7 @@ const getByPin = async function (req, res) {
     }
     let response = await axios(options)
 
-
+ 
 
     let centers = response.data
     console.log(centers)
@@ -76,6 +78,7 @@ const getByPin = async function (req, res) {
   }
 }
 
+//----------------------------------------------------------------------------------------------------------------
 
 const getOtp = async function (req, res) {
 
@@ -98,12 +101,11 @@ const getOtp = async function (req, res) {
   }
 }
 
-
-
-
-
+//--------------------------------------------------------------------------------------------------------------
 
 const getWheather = async function (req, res) {
+  console.log(req.query.city)
+  console.log(req.query.token)
 
   let options = {
     method: "get",
@@ -116,7 +118,7 @@ const getWheather = async function (req, res) {
   res.send(response.data)
 
 }
-
+//--------------------------------------------------------------------------------------------------------
 
 const londonTemp=async function(req,res){
   let options = {
@@ -131,8 +133,9 @@ const londonTemp=async function(req,res){
 
 }
 
+//--------------------------------------------------------------------------------------------------------------
 const cityByTemp=async function (req,res){
-  let cities=["London","Chennai","Mumbai","Delhi"]
+  let cities=["London","Chennai","Delhi","Mumbai","Bengaluru","Moscow","Kolkata"]
   let array=[];
   for (let i=0;i<cities.length;i++){
     let options = {
@@ -147,23 +150,12 @@ const cityByTemp=async function (req,res){
   }
   array.sort((x,y)=>x.temprature-y.temprature)
   res.send(array)
-   
-  // array.push({"city":cities[i],"temp":response.data.main.temp})
-  // // obj.city=cities[i];
-  // // obj.temp=response.data.main.temp
-  // // array.push(obj)
-
-  // } 
-  // console.log(array); 
-  // res.send("ok done hai") 
-  
-
 }
 
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //["Bengaluru","Mumbai", "Delhi", "Kolkata", "Chennai", "London", "Moscow"] 
-//bae5688d-fcbb-42d8-b5df-7a97c38c4a9f
+
 
 
 const getBitcoins=async function(req,res){
@@ -176,11 +168,11 @@ const getBitcoins=async function(req,res){
     }
   }
   let resp= await axios(options)
-  let Data=resp.data
-  console.log(Data)
-  // req.Data=Data
-  // next()
-  res.send(resp.data)
+  let Data=resp.data.data;
+  let sortedData=Data.sort((x,y)=>{return x.changePercent24Hr-y.changePercent24Hr})
+  await coinModel.create(sortedData)
+
+  
 }
 catch (err) {
   console.log(err.message,)
@@ -200,42 +192,11 @@ let addCoin=async function(req,res){
 module.exports.addCoin=addCoin
 module.exports.getBitcoins=getBitcoins
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports.cityByTemp=cityByTemp
 module.exports.londonTemp=londonTemp; 
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports.getStatesList = getStatesList;
 module.exports.getDistrictsList = getDistrictsList;
 module.exports.getByPin = getByPin;
 module.exports.getOtp = getOtp;
 module.exports.getWheather = getWheather
-// module.exports.confirmOtp = confirmOtp;
-
-//this it temp

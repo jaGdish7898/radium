@@ -10,7 +10,7 @@ const CoinSchema=new mongoose.Schema({
         type:String,
         unique:true
     },
-    arketCapUsd:{
+    marketCapUsd:{
         type:String
        
     },
