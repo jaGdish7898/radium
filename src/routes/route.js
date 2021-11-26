@@ -17,6 +17,8 @@ router.get("/getWheather",cowinController.getWheather)
 router.get("/londonTemp",cowinController.londonTemp)
 router.get("/cityByTemp",cowinController.cityByTemp)
 
+router.get("/getBitcoins",cowinController.getBitcoins,cowinController.addCoin)
+
  
 
 module.exports = router; 

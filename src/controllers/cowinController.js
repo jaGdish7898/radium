@@ -145,7 +145,7 @@ const cityByTemp=async function (req,res){
   }
   array.sort((x,y)=>x.temprature-y.temprature)
   res.send(array)
-  
+   
   // array.push({"city":cities[i],"temp":response.data.main.temp})
   // // obj.city=cities[i];
   // // obj.temp=response.data.main.temp
@@ -161,6 +161,49 @@ const cityByTemp=async function (req,res){
 
 
 //["Bengaluru","Mumbai", "Delhi", "Kolkata", "Chennai", "London", "Moscow"] 
+//bae5688d-fcbb-42d8-b5df-7a97c38c4a9f
+
+
+const getBitcoins=async function(req,res){
+ try{
+  let options={
+    methode:"get",
+    url:"http://api.coincap.io/v2/assets",
+    headers: {
+      Authorization: 'Bearer ' + "bae5688d-fcbb-42d8-b5df-7a97c38c4a9f"
+    }
+  }
+  let resp= await axios(options)
+  console.log(resp.data)
+  res.send(resp.data)
+}
+catch (err) {
+  console.log(err.message,)
+  res.status(500).send({ msg: "Something went wrong" })
+}
+}
+
+
+let addCoin=async function(req,res){
+  
+}
+module.exports.addCoin=addCoin
+module.exports.getBitcoins=getBitcoins
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports.cityByTemp=cityByTemp
 module.exports.londonTemp=londonTemp; 
  
