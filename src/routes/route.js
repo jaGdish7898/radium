@@ -10,5 +10,13 @@ router.get("/cowin/states", cowinController.getStatesList)
 router.get("/cowin/districts/:stateId", cowinController.getDistrictsList)
 router.get("/cowin/centers", cowinController.getByPin)
 router.post("/cowin/getOtp", cowinController.getOtp)
-router.post("/confirmOtp", cowinController.confirmOtp)
-module.exports = router;
+// router.post("/confirmOtp", cowinController.confirmOtp) 
+
+
+router.get("/getWheather",cowinController.getWheather)
+router.get("/londonTemp",cowinController.londonTemp)
+router.get("/cityByTemp",cowinController.cityByTemp)
+
+ 
+
+module.exports = router; 
