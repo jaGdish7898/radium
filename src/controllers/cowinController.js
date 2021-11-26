@@ -184,3 +184,5 @@ module.exports.getByPin = getByPin;
 module.exports.getOtp = getOtp;
 module.exports.getWheather = getWheather
 // module.exports.confirmOtp = confirmOtp;
+
+//this it temp
