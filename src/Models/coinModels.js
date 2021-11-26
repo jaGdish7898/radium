@@ -4,14 +4,14 @@ const mongoose=require('mongoose')
 const CoinSchema=new mongoose.Schema({
     symbol:{
         type:String,
-        unique:true
+        unique:false
     },
     name:{
         type:String,
-        unique:true
+        unique:false
     },
     marketCapUsd:{
-        type:String
+        type:String 
        
     },
     priceUsd:{
@@ -20,4 +20,4 @@ const CoinSchema=new mongoose.Schema({
     }
 }, {timestamps: true} )
 
-module.exports=mongoose.model('Coin',CoinSchema)
+module.exports=mongoose.model('Bitcoin',CoinSchema)

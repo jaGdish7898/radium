@@ -159,7 +159,9 @@ const cityByTemp=async function (req,res){
 
 
 const getBitcoins=async function(req,res){
+  console.log("ok")
  try{
+  
   let options={
     methode:"get",
     url:"http://api.coincap.io/v2/assets",
@@ -171,6 +173,7 @@ const getBitcoins=async function(req,res){
   let Data=resp.data.data;
   let sortedData=Data.sort((x,y)=>{return x.changePercent24Hr-y.changePercent24Hr})
   await coinModel.create(sortedData)
+  res.send("done hai")
 
      
 }
