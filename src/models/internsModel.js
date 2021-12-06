@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const validator=require('validator')
 const objectId = mongoose.Schema.Types.ObjectId
 const internSchema = new mongoose.Schema({
     name: {
@@ -6,7 +7,16 @@ const internSchema = new mongoose.Schema({
         required: [true, 'name is required']
     },
     email: {
-        type: String,
+        type:String,
+        unique:true,
+        validate:{
+            validator:validator.isEmail,
+            message:'{VALUE} is not a valid email',
+            isAsync:false
+        }
+        },
+
+    /*type: String,
         trim: true,
         lowercase: true,
         unique: true,
@@ -15,8 +25,8 @@ const internSchema = new mongoose.Schema({
             validator: function (email) {
                 return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
             }, message: 'Please fill a valid email address', isAsync: false
-        }
-    },
+        }*/
+    
     mobile: {
         type: Number,
         validate: {
