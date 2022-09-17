@@ -18,7 +18,7 @@ export default function FeesStructure () {
 
             </div>
             <div className= {style.rightSec}>
-                <Image src={zero} layout='fill' objectFit='fill'/>
+                <Image src={zero} layout='fill' alt = 'zero' objectFit='fill'/>
             </div>
         </div>
     )

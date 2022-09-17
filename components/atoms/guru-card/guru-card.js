@@ -11,6 +11,7 @@ export default function GuruCard () {
                     layout='fill'
                     objectFit='fill'
                     className={cardStyle.image}
+                    alt = 'guru'
                 />
                 
             </div>
