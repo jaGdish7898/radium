@@ -1,0 +1,92 @@
+.wrapper{
+    /* border:2px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:column-reverse;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    /* position: relative; */
+    /* height: auto; */
+
+}
+.leftSec{
+    /* flex: 1; */
+    /* border: 1px solid blue; */
+    /* text-align: center; */
+
+    font-weight: 500;
+    font-size: 1rem;
+    color : var(--global-primary-color-three);
+    text-align: justify;
+    /* list-style: none; */
+    line-height:1.5rem;
+    position: relative;
+
+}
+.rightSec{
+    /* flex: 1; */
+    margin: 0 auto;
+    /* display: flex; */
+    /* justify-content: end; */
+    /* border: 1px solid green; */
+    /* text-align: center; */
+    height: 15rem;
+    width: 15rem;
+    position: relative;
+
+}
+.Spesker{
+      color: var(--global-primary-color-one);
+      /* border: 1px solid green; */
+      font-weight: 700;
+      /* width: 100%; */
+      /* margin-top: 3rem; */
+
+      
+}
+.feesInfo{
+    /* padding-bottom: 1rem; */
+}
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1024px) {
+
+    .wrapper{
+        flex-wrap: nowrap;
+        flex-direction: row;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        /* height: auto; */
+    }
+    .leftSec{
+        flex: 1;
+        font-size: 0.833rem;
+        /* line-height: 1rem; */
+        /* font-weight: 700; */
+        /* display: flex; */
+        /* align-items: center; */
+    
+        /* margin: auto 0; */
+        margin: auto 0;
+
+    }
+    .rightSec{
+        flex: 1;
+        position: relative;
+        height: 15rem;
+        width: 15rem;
+
+    }
+    .Spesker{
+        position: absolute;
+        right: 0;
+        
+    }
+}

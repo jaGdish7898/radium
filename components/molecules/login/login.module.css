@@ -1,0 +1,96 @@
+.wrapper{
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* border:1px solid rebeccapurple */
+}
+.inputFieldWrapper{
+    padding : 1rem 1rem 1.5rem 1rem
+
+}
+.inputStyle{
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 5px;
+    border:2px solid #7e7f8984;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+}
+.buttonWrapper{
+    padding : 0 1rem;
+    padding-bottom: 1rem;
+}
+.redirectText{
+    text-align: end;
+    padding: 1rem;
+    font-size: 0.8rem;
+
+}
+.loginText {
+    color : var(--global-primary-color-one);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding-left: 0.4rem;
+    cursor: pointer;
+
+
+}
+.closeBtnWrapper{
+    /* border: 1px solid green; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgb(162, 160, 160);
+    
+}
+.matajiText{
+    font-weight: 500;
+    font-size: 1rem;
+}
+.secondaryWrapper{
+    min-height: 22rem;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1024px) {
+    .wrapper{
+        /* color:black; */
+        /* margin-top: 4rem; */
+    }
+    .secondaryWrapper{
+        /* min-height: 25rem; */
+    }
+    .dialog{
+        width: 32%;
+        margin: 0 auto;
+
+        /* min-height: 800px; */
+    }
+    .inputStyle::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+         margin: 0;
+    }
+    .inputStyle[type=text]:focus {
+        outline: none ;
+        border:2px solid rgb(219, 169, 19);
+    }
+    .inputStyle[type=number]:focus {
+        outline: none;
+        border:2px solid rgb(219, 169, 19);
+    }
+    .inputStyle[type=password]:focus {
+        outline: none;
+        border:2px solid rgb(219, 169, 19);
+    }
+
+
+}

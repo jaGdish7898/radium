@@ -1,0 +1,54 @@
+/* .optionListContainer */
+.optionListContainer{
+    min-width: 200px;
+    /* padding-top: 3rem; */
+    /* border:2px solid red; */
+    /* padding : 1rem 1rem */
+
+}
+.option{
+    display: flex;
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: 400;
+    /* border: 1px solid var(--global-primary-color-three); */
+    color : var(--global-primary-color-three);
+    padding: 1rem;
+    text-align: start;
+    align-items: center;
+    cursor: pointer;
+    
+    /* justify-content: center; */
+    
+}
+.closeBtn{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    cursor: pointer;
+}
+
+
+
+
+@media screen and (min-width: 1024px) {
+    .option{
+        font-size: 0.6rem;
+    }
+    .optionListContainer{
+        min-width: 300px;
+        /* padding-top: 3rem; */
+        /* border:2px solid red; */
+        /* padding : 1rem 1rem */
+    
+    }
+    .option:hover{ 
+        color: rgb(55, 0, 255);
+        transition: transform .5s ease-out;
+        transform: scale(1.1);
+     }
+
+
+    
+}
